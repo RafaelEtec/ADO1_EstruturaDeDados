@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * por Rafael Ferreira Goulart
+ *     Pedro Henrique Fogaça
  */
 
 public class AdministracaoDeLivros {

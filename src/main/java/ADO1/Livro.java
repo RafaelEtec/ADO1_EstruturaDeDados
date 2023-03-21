@@ -2,6 +2,7 @@ package ADO1;
 
 /**
  * por Rafael Ferreira Goulart
+ *     Pedro Henrique Fogaça
  */
 
 public class Livro {
