@@ -1,0 +1,18 @@
+Id: 3
+  Autor: Rafael
+  Título: 421sfa
+  Preço: 31.0
+Id: 1
+  Autor: Rafael
+  Título: as
+  Preço: 10.0
+Id: 2
+  Autor: Rafael
+  Título: as
+  Preço: 10.0
+Id: 4
+  Autor: Rafael
+  Título: sgag
+  Preço: 30.0
+
+

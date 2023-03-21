@@ -37,6 +37,19 @@ public class Array {
     }
     
     /**
+     * Exibe apenas o valor buscado
+     * @return 
+     */
+    public static String mostrarUm(int id) {
+        String txt = "";
+        
+        System.out.println(lista[id]);
+        txt = txt + lista[id].toString() + "\n";
+        
+        return txt;
+    }
+    
+    /**
      * Aumenta o tamanho do Array lista
      * @return 
      */
@@ -53,9 +66,22 @@ public class Array {
      * @param id
      * @return 
      */
-    public static int buscar(int id) {
+    public static int buscar(String titulo) {
         int inicio = 0, fim = ind - 1, meio;
         
+        while (inicio <= fim) {
+            meio = (fim + inicio) / 2;
+            if (titulo == lista[meio].getTitulo()) {
+                return meio;
+            } else {
+                fim = meio - 1;
+            }
+        }
+        return -1;
+    }
+    
+    public static int buscarEx(int id) {
+        int inicio = 0, fim = ind - 1, meio;
         while (inicio <= fim) {
             meio = (fim + inicio) / 2;
             if (id == lista[meio].getId()) {
@@ -75,7 +101,7 @@ public class Array {
      * @return
      */
     public static boolean remover(int id) {
-        int rem = buscar(id);
+        int rem = buscarEx(id);
         
         if (rem != -1) {
             for (int i = rem; i < ind - 1; i++) {
@@ -86,4 +112,42 @@ public class Array {
         }
         return false;
     }
+    
+    public static void ordenarPorAutor(){
+       for (int i = 1; i < ind; i++) {
+            Livro temp = lista[i];
+            int j = i;
+            while (j > 0 && lista[j - 1].getAutor().compareTo(temp.getAutor())>0) {
+                lista[j] = lista[j - 1];
+                j--;
+            }
+            lista[j] = temp;
+        }
+    }
+    
+    public static void ordenarPorTitulo(){
+       for (int i = 1; i < ind; i++) {
+            Livro temp = lista[i];
+            int j = i;
+            while (j > 0 && lista[j - 1].getTitulo().compareTo(temp.getTitulo())>0) {
+                lista[j] = lista[j - 1];
+                j--;
+            }
+            lista[j] = temp;
+        }
+    }
+    
+    /**
+    public static void ordenarPorID(){
+       for (int i = 1; i < ind; i++) {
+            Livro temp = lista[i];
+            int j = i;
+            while (j > 0 && lista[j - 1].getAutor().compareTo(temp.getAutor())>0) {
+                lista[j] = lista[j - 1];
+                j--;
+            }
+            lista[j] = temp;
+        }
+    }
+    **/
 }
